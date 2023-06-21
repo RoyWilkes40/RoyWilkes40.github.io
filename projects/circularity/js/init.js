@@ -61,7 +61,7 @@ var init = function (window) {
       game.checkCirclePosition(circles[2]);
       game.checkCirclePosition(circles[3]);
       game.checkCirclePosition(circles[4]);
-}
+
       // TODO 9 : Iterate over the array
     }
 
@@ -70,7 +70,8 @@ var init = function (window) {
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
-    game.checkCirclePosition = function (circle) {
+    game.checkCirclePosition = function (circle){
+    
       // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
       if (circle.x > canvas.width) {
         circle.x = 0;
@@ -88,7 +89,7 @@ if (circle.y < 0){
 }
       // YOUR TODO 6 CODE ENDS HERE //////////////////////////
     };
-
+  
     /////////////////////////////////////////////////////////////
     // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
     /////////////////////////////////////////////////////////////
@@ -103,13 +104,11 @@ if (circle.y < 0){
 
     app.addUpdateable(window.opspark.game);
   };
-
+}
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if (
-  typeof process !== "undefined" &&
-  typeof process.versions.node !== "undefined"
-) {
-  // here, export any references you need for tests //
-  module.exports = init;
+if((typeof process !== 'undefined') &&
+    (typeof process.versions.node !== 'undefined')) {
+    // here, export any references you need for tests //
+    module.exports = init;
 }
